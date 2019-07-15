@@ -1,0 +1,65 @@
+#!/bin/sh
+
+set -e
+
+#amd64 kernel hack
+#apt-get remove -y linux-image-amd64 linux-image-*-amd64
+#apt-get autoremove -y
+#dpkg --add-architecture amd64
+#wget "http://192.168.1.200:3142/ftp.de.debian.org/debian/pool/main/l/linux/linux-image-4.3.0-0.bpo.1-amd64_4.3.3-2~bpo8+1_amd64.deb" -O /tmp/linux-image-amd64.deb
+#dpkg -i /tmp/linux-image-amd64.deb
+#rm /tmp/linux-image-amd64.deb
+
+echo "START URBACKUP CHROOT HOOK"
+
+cd /root
+wget -O restore_cd.tar.xz --no-cache http://buildserver.urbackup.org/restore_cd_2_amd64.tar.xz
+tar xf restore_cd.tar.xz
+rm restore_cd.tar.xz
+chmod +x urbackuprestoreclient
+
+mkdir /home/urbackup
+SF="/home/urbackup/.bashrc"
+#echo "#!/bin/sh" > $SF
+echo "setterm -blank 0 -powersave off" > $SF
+echo "if [[ \$(tty) == \"/dev/tty1\" ]]; then" >> $SF
+echo "chvt 1" >> $SF
+echo "sudo /root/start.sh" >> $SF
+#echo "shutdown -h now" >> $SF
+#echo "exit 0" >> $SF
+echo "fi" >> $SF
+#echo "setterm -blank 0" >> $SF
+chmod 777 $SF
+
+echo ". ~/.bashrc" > /home/urbackup/.bash_profile
+chmod 777 /home/urbackup/.bash_profile
+
+#CONF="/etc/live/config/2000-bashrc"
+
+#echo "#!/bin/sh" > $CONF
+#echo "chown -R urbackup /home/urbackup" >> $CONF
+#chmod +x $CONF
+
+SF=/etc/rc.local
+echo "#!/bin/sh" > $SF
+echo "" >> $SF
+echo "exit 0" >> $SF
+chmod +x $SF
+
+echo "kernel.printk = 3 4 1 3" >> /etc/sysctl.conf
+
+SF="/etc/wicd/manager-settings.conf"
+echo "[Settings]" > $SF
+echo "wireless_interface = wlan0" >> $SF
+echo "always_show_wired_interface = True" >> $SF
+echo "prefer_wired = True" >> $SF
+
+#Autologin
+sed -i 's/\/sbin\/agetty/\/sbin\/agetty --autologin urbackup/g' /lib/systemd/system/getty@.service
+
+echo "END URBACKUP CHROOT HOOK"
+
+#apt-get -y install live-boot
+#mkdir -p /etc/initramfs-tools
+#echo overlay >> /etc/initramfs-tools/modules
+#echo nls_ascii >> /etc/initramfs-tools/modules

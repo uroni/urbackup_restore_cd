@@ -1,0 +1,10 @@
+[Image]
+Architecture: amd64
+Archive-Areas: main contrib non-free
+Distribution: buster
+Mirror-Bootstrap: http://ftp.uni-stuttgart.de/debian/
+
+[FIXME]
+Configuration-Version: 1:20170213
+Name: live-image
+Type: iso-hybrid

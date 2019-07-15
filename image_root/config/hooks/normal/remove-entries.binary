@@ -1,0 +1,33 @@
+#!/bin/sh
+
+#OLD ISOLINUX
+sed -i 's/include install.cfg//' isolinux/menu.cfg
+cp isolinux/live.cfg isolinux/live.cfg.orig
+sed -i 's/Live (486)/Start UrBackup Restore/' isolinux/live.cfg
+IF=binary/isolinux/live.cfg
+sed -n '1h;1!H;$ {g;s/label live-486-failsafe.*$//g;p;}' $IF > $IF.edited
+cp $IF.edited $IF
+rm $IF.edited
+
+#NEW ISOLINUX
+sed -i 's/Live (amd64)/Start UrBackup Restore/' isolinux/live.cfg
+sed -i 's/Live (amd64 failsafe)/Start in failsafe mode/' isolinux/live.cfg
+sed -i 's/menu vshift 12/menu vshift 17/' isolinux/stdmenu.cfg
+#sed -i 's/splash.png/..\/splash.png/' isolinux/stdmenu.cfg
+#cp ../splash.png ./splash.png
+
+#IF=isolinux/live.cfg
+#sed -n '1h;1!H;$ {g;s/label live-amd64-failsafe.*$//g;p;}' $IF > $IF.edited
+#sed -i 's/vmlinuz1/vmlinuz2/' $IF.edited
+#sed -i 's/initrd1.img/initrd2.img/' $IF.edited
+#cp $IF.edited $IF
+#rm $IF.edited
+
+IF=isolinux/menu.cfg
+sed -n '1h;1!H;$ {g;s/menu begin advanced.*menu end//g;p;}' $IF > $IF.edited
+cp $IF.edited $IF
+rm $IF.edited
+
+sed -i 's/Live system (fail-safe mode)/Start in failsafe mode/' boot/grub/grub.cfg
+sed -i 's/Live system/Start UrBackup Restore/' boot/grub/grub.cfg
+sed -i 's/top = 52%/top = 72%/' boot/grub/live-theme/theme.txt
