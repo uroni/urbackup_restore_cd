@@ -48,11 +48,11 @@ chmod +x $SF
 
 echo "kernel.printk = 3 4 1 3" >> /etc/sysctl.conf
 
-SF="/etc/wicd/manager-settings.conf"
-echo "[Settings]" > $SF
-echo "wireless_interface = wlan0" >> $SF
-echo "always_show_wired_interface = True" >> $SF
-echo "prefer_wired = True" >> $SF
+#SF="/etc/wicd/manager-settings.conf"
+#echo "[Settings]" > $SF
+#echo "wireless_interface = wlan0" >> $SF
+#echo "always_show_wired_interface = True" >> $SF
+#echo "prefer_wired = True" >> $SF
 
 #Autologin
 sed -i 's/\/sbin\/agetty/\/sbin\/agetty --autologin urbackup/g' /lib/systemd/system/getty@.service
