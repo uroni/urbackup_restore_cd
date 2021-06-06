@@ -1,7 +1,7 @@
 [Image]
 Architecture: amd64
 Archive-Areas: main contrib non-free
-Distribution: buster
+Distribution: bullseye
 Mirror-Bootstrap: http://ftp.uni-stuttgart.de/debian/
 
 [FIXME]

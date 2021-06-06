@@ -1,12 +1,12 @@
 # config/bootstrap - options for live-build(7), bootstrap stage
 
 # $LB_DISTRIBUTION: select distribution to use
-# (Default: buster)
-LB_DISTRIBUTION="buster"
+# (Default: bullseye)
+LB_DISTRIBUTION="bullseye"
 
 # $LB_PARENT_DISTRIBUTION: select parent distribution to use
-# (Default: buster)
-LB_PARENT_DISTRIBUTION="buster"
+# (Default: bullseye)
+LB_PARENT_DISTRIBUTION="bullseye"
 
 # $LB_PARENT_DEBIAN_INSTALLER_DISTRIBUTION: select parent distribution for debian-installer to use
 # (Default: stretch)
