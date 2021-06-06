@@ -21,9 +21,7 @@ jobs:
           
       - name: Configure imagemagick
         run: |
-          sudo cat /etc/ImageMagick-6/policy.xml
-          sudo sed -i 's#<policy domain="path" rights="none" pattern="@*"/>##g' /etc/ImageMagick-6/policy.xml
-          sudo cat /etc/ImageMagick-6/policy.xml
+          sudo rm /etc/ImageMagick-6/policy.xml
         
       - name: Build ISO
         run: |
