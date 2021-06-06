@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Create new ISO
-    runs-on: buster
+    runs-on: debian-buster
     
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
