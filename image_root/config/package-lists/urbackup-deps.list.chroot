@@ -1,7 +1,7 @@
 parted
 dialog
 hdparm
-wicd-curses
+#wicd-curses
 keyboard-configuration
 console-setup
 libzstd1
