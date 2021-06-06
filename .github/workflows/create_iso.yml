@@ -19,6 +19,11 @@ jobs:
         run: |
           sudo apt-get install -y live-build imagemagick
           
+      - name: Install debian live-build
+        run: |
+          curl "https://ftp.debian.org/debian/pool/main/l/live-build/live-build_20210407_all.deb" > live-build.deb
+          sudo dpkg -i live-build.deb
+          
       - name: Configure imagemagick
         run: |
           sudo rm /etc/ImageMagick-6/policy.xml
