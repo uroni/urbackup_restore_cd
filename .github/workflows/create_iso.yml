@@ -23,6 +23,8 @@ jobs:
         run: |
           curl "https://ftp.debian.org/debian/pool/main/l/live-build/live-build_20210407_all.deb" > live-build.deb
           sudo dpkg -i live-build.deb
+          curl "http://ftp.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2021.1.1_all.deb" > keyring.deb
+          sudo dpkg -i keyring.deb
           
       - name: Configure imagemagick
         run: |
