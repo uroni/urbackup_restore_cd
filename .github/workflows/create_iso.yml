@@ -32,7 +32,7 @@ jobs:
         
       - name: Build ISO
         run: |
-          bash config_image.sh && sudo bash build_image.sh
+          sudo bash build_image.sh
 
       - name: Get current date
         id: date
