@@ -5,3 +5,10 @@ hdparm
 keyboard-configuration
 console-setup
 libzstd1
+chromium
+task-lxde-desktop
+libcurl3-nss
+libssl1.1
+fonts-noto
+fonts-noto-color-emoji
+network-manager-gnome

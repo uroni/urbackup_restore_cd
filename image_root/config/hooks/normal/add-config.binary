@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cat << "EOF" > connection_settings.json
+{
+	"no_config": true,
+	"keyboardLayout": "de",
+	"serverUrl": "urbackup://example.com",
+	"serverAuthkey": "foobar"
+}
+EOF
+
+
+
+
+
+
