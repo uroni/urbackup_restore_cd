@@ -21,9 +21,9 @@ jobs:
           
       - name: Install debian live-build
         run: |
-          curl "https://ftp.debian.org/debian/pool/main/l/live-build/live-build_20190311_all.deb" > live-build.deb
+          curl "https://ftp.debian.org/debian/pool/main/l/live-build/live-build_20230502_all.deb" > live-build.deb
           sudo dpkg -i live-build.deb
-          curl "https://ftp.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2021.1.1_all.deb" > keyring.deb
+          curl "https://ftp.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3_all.deb" > keyring.deb
           sudo dpkg -i keyring.deb
           
       - name: Configure imagemagick
