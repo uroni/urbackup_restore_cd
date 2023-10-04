@@ -13,3 +13,4 @@ fonts-noto
 fonts-noto-color-emoji
 network-manager-gnome
 file
+xserver-xorg-legacy
