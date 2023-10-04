@@ -4,22 +4,22 @@
 LB_ARCHITECTURE="amd64"
 
 # Select distribution to use
-LB_DISTRIBUTION="bullseye"
+LB_DISTRIBUTION="bookworm"
 
 # Select parent distribution to use
-LB_PARENT_DISTRIBUTION="bullseye"
+LB_PARENT_DISTRIBUTION="bookworm"
 
 # Select distribution to use in the chroot
-LB_DISTRIBUTION_CHROOT="bullseye"
+LB_DISTRIBUTION_CHROOT="bookworm"
 
 # Select parent distribution to use in the chroot
-LB_PARENT_DISTRIBUTION_CHROOT="bullseye"
+LB_PARENT_DISTRIBUTION_CHROOT="bookworm"
 
 # Select distribution to use in the final image
-LB_DISTRIBUTION_BINARY="bullseye"
+LB_DISTRIBUTION_BINARY="bookworm"
 
 # Select parent distribution to use in the final image
-LB_PARENT_DISTRIBUTION_BINARY="bullseye"
+LB_PARENT_DISTRIBUTION_BINARY="bookworm"
 
 # Select parent distribution for debian-installer to use
 LB_PARENT_DEBIAN_INSTALLER_DISTRIBUTION="stretch"
