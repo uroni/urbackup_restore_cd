@@ -7,8 +7,8 @@ console-setup
 libzstd1
 chromium
 task-lxde-desktop
-libcurl3-nss
-libssl3
+libcurl4t64
+libssl3t64
 fonts-noto
 fonts-noto-color-emoji
 network-manager-gnome
