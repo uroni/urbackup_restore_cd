@@ -15,3 +15,4 @@ network-manager-gnome
 file
 xserver-xorg-legacy
 zstd
+btrfs-progs
