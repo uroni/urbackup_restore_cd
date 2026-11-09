@@ -13,7 +13,7 @@ set -e
 echo "START URBACKUP CHROOT HOOK"
 
 cd /root
-wget -O restore_cd.tar.xz --no-cache https://buildserver.urbackup.org/restore_cd_2_amd64.tar.xz
+wget -O restore_cd.tar.xz --no-cache "https://github.com/uroni/urbackup_backend/releases/download/restore-cd-latest/restore_cd_2_amd64.tar.xz"
 tar xf restore_cd.tar.xz
 rm restore_cd.tar.xz
 chmod +x urbackuprestoreclient
